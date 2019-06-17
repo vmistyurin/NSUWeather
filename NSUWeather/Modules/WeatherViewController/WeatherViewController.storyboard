@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Did-sw-mMq">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather View Controller-->
+        <scene sceneID="VB8-X0-izP">
+            <objects>
+                <viewController storyboardIdentifier="WeatherViewController" id="Did-sw-mMq" customClass="WeatherViewController" customModule="NSUWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="UMP-9Z-EI7">
+                        <rect key="frame" x="0.0" y="0.0" width="167" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xm1-ND-Lp6">
+                                <rect key="frame" x="0.0" y="0.0" width="167" height="270"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                                <connections>
+                                    <outlet property="navigationDelegate" destination="Did-sw-mMq" id="OBv-RC-kuC"/>
+                                </connections>
+                            </wkWebView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xm1-ND-Lp6" firstAttribute="top" secondItem="UMP-9Z-EI7" secondAttribute="top" id="B68-nh-30E"/>
+                            <constraint firstAttribute="bottom" secondItem="xm1-ND-Lp6" secondAttribute="bottom" id="Hh3-9v-8vF"/>
+                            <constraint firstItem="xm1-ND-Lp6" firstAttribute="leading" secondItem="UMP-9Z-EI7" secondAttribute="leading" id="Q74-cs-jMG"/>
+                            <constraint firstAttribute="trailing" secondItem="xm1-ND-Lp6" secondAttribute="trailing" id="hcc-fL-qm5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="xm1-ND-Lp6" id="kro-4C-QLD"/>
+                    </connections>
+                </viewController>
+                <customObject id="1Wy-bk-IzK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="91r-w5-2YT"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="251"/>
+        </scene>
+    </scenes>
+</document>
